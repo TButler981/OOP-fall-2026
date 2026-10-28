@@ -7,6 +7,9 @@ class Student{
     public:
         Student(const std::string& n, double st_gpa);
 
+        //destructor
+        ~Student();
+
         bool canGraduate() const;
         void printStudentInfo() const;
         //static method

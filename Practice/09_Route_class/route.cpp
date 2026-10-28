@@ -18,43 +18,15 @@ public:
     //Constructor is called when an object is created
     //constructor doesnt have a return type (not even void)
     //constructor is named the same as the structure
-    Route(const std::string& src, const std::string& dest, const std::string& tr = "Car") {
-        source = src;
-        destination = dest;
-        transport = tr;
-        updateLength();
-    }
-    void print() const {
-        // Source = "abc" // You cant do this in a constant method
-        std::cout << "{" << source << " -> " << destination << ", " << length << ", " << transport << "}\n";
-    }
-
+    Route (const std::string& src, const std::string& dest);
+    void print() const;
     //Setters (mutator functions)
-    void setDestination(const std::string& dest){
-        destination = dest;
-        updateLength();
-    }
-
-    void setSource(const std::string& src){
-        source = src;
-        updateLength();
-    }
-
-   // void setTransport(const std::string& tr){
-
-    
-
+    void setDestination(const std::string& dest);
+    void setSource(const std::string& src);
     //getters
-    std::string getSource() const{
-        return source;
-    }
-    std::string getDestination() const{
-        return destination;
-    }
-    int getLength(){
-        return length;
-    }
-
+    std::string getSource() const;
+    std::string getDestination() const;
+    int getLength();
 private:
     void updateLength() {
         //imagine this is a complex method that updates the distance
@@ -88,4 +60,38 @@ int main(void) {
 
 
     return 0;
+}
+
+Route::Route(const std::string& src, const std::string& dest) {
+    source = src;
+    destination = dest;
+    updateLength();
+}
+void Route::print() const {
+    // Source = "abc" // You cant do this in a constant method
+    std::cout << "{" << source << " -> " << destination << ", " << length << ", " << transport << "}\n";
+}
+
+//Setters (mutator functions)
+void Route::setDestination(const std::string& dest){
+    destination = dest;
+    updateLength();
+}
+
+void Route::setSource(const std::string& src){
+    source = src;
+    updateLength();
+}
+
+
+
+//getters
+std::string Route::getSource() const{
+    return source;
+}
+std::string Route::getDestination() const{
+    return destination;
+}
+int Route::getLength(){
+    return length;
 }

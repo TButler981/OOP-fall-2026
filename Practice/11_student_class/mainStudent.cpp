@@ -10,6 +10,11 @@ int main(void) {
     st_bob.printStudentInfo();
     st_alice.printStudentInfo();
 
+    for (int i = 0; i < 10; i++) {
+        Student test("Test", 1.0);
+        // Work with test student...
+    }
+
     std::cout << "Required GPA: " << Student::getRequiredGPA() << std::endl;
     std::cout << "Total students: " << Student::getTotalStudents() << std::endl;
     std::cout << "Total GPA: " << Student::getTotalGPA() << std::endl;

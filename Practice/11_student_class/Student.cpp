@@ -13,6 +13,13 @@ Student::Student(const std::string& n, double st_gpa) : name(n), gpa(st_gpa) {
     next_id += 5;
     total_gpa += st_gpa;
 }
+
+Student::~Student() {
+    std::cout << "Destructor was called\n";
+    total_students--;
+    total_gpa -= gpa;
+}
+
 bool Student::canGraduate() const{
     return gpa >= required_gpa;
 }
@@ -31,6 +38,10 @@ void Student::setRequiredGPA(double new_gpa) {
 }
 
 double Student::gpa_average(){
+    if (total_students == 0){
+        return 0.0;
+    }
+    
     return total_gpa / total_students;
 }
 
