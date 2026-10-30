@@ -3,11 +3,11 @@
 
 
 int main (void) {
-    Point p1(4, 5);
-    Point p2(6, 4);
-    Point p3(81, 85);
+    Point p1(4, 5, "p1");
+    Point p2(6, 4, "p2");
+    Point p3(81, 85, "p3");
 
-    std::cout << p3.toString() << std::endl;
+    std::cout << p1.toString() << std::endl;
 
     if (p1 != p2) {
         std::cout << (char) p3[0];
@@ -15,14 +15,29 @@ int main (void) {
     else{
         std::cout << (char) p3[1];
     }
-    p1[0] = 40 + 47;
     std::cout << (char) p1[0] << std::endl;
 
-    p1[1] = p1[1] + 4;
-    p2[1] = p2[1] + 3;
+    //Test ++ operator
+    ++++p1;
 
-    Point p4 = p1 * p2;
-    std::cout << (char) (p4[1] - 12) << std::endl;
+    std::cout << p1.toString() << std::endl;
+
+    Point p4 = p1++ + ++p2;
+
+    std::cout << p4.toString() << std::endl;
+
+    //test +=
+
+    p4 += p1;
+
+    std::cout << p4.toString() << std::endl;
+
+    //test -+
+    p4 -= p1;
+
+    std::cout << p4.toString() << std::endl;
+
+    
 
     return 0;
 }
